@@ -1,4 +1,4 @@
-const mongoose = require('../db');
+const mongoose = require('../db/Connection');
 //mongoose.schema only creates an in mmeory js object, that defines the document layout.
 //new creates an instance of that object, which we then plug into mongoose.model() does 
 //the model get registered under the name Submission and gives you the ability to create() documents.
