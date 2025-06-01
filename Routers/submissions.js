@@ -1,8 +1,15 @@
-const routerFunctions = require('./submissionFunctions.js');
+const routerSubmissionFunctions = require('./routerSubmissionFunctions');
+const routerGetFunctions = require('./routerGetFunctions');
 const express = require('express');
 const ser = express.Router();
+const { storage } = require('./Cloudinary');
+const multer = require('multer');
 
-ser.post('/uploadPhoto', routerFunctions.submitPhoto);
-ser.post('/submitText', routerFunctions.submitText);
+const parser = multer({storage: storage});
+
+ser.post('/photo', parser.single('photo'), routerSubmissionFunctions.uploadPhoto);
+ser.post('/text', routerSubmissionFunctions.submitText);
+ser.get('/getOneSubmission', routerGetFunctions.getOneSubmission)
+
 
 module.exports = ser;

@@ -7,9 +7,9 @@ const mongoose = require('./db/Connection')
 //if applied to app, it is globabl, if you want local to router, apply to router only.
 app.use(express.json());
 
-app.use('/user', submission); //connects to submission file and activaes upon post /user
+app.use('/submission', submission); //connects to submission file and activaes upon post /user
 
-app.post('/api/hello', (req, res) => {
+app.post('/api/test', (req, res) => {
     console.log('Recieved body request', req.body);
     res.json({message: 'Hello from server!'});
 });

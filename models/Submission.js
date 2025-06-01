@@ -8,8 +8,9 @@ const SubmissionLayout = new mongoose.Schema({ //create blueprint object
     reviewText: String,
     nickname: String,
     location: String,
-    submittedAt: {type: Date, defualt: Date.now}
-});
+    submittedAt: {type: Date, defualt: Date.now},
+    accepted: { type: Boolean, default: false }
+}, { timestamps: true });
 
 //creates model class, has static functions liek find(), create() update(),
 //but if you plan on plugging it in you must create an instance, either create or save after creation.
