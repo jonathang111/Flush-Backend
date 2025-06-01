@@ -9,7 +9,7 @@ const SubmissionLayout = new mongoose.Schema({ //create blueprint object
     nickname: String,
     location: String,
     submittedAt: {type: Date, defualt: Date.now},
-    accepted: { type: Boolean, default: false }
+    accepted: { type: Boolean, default: true } //since no admin page to approave, default true
 }, { timestamps: true });
 
 //creates model class, has static functions liek find(), create() update(),
